@@ -1,9 +1,12 @@
 tasks:
-  - name: Setup VPS
+  - name: VPS Setup
     command: |
-      sudo apt update
-      sudo apt install -y nginx
+      echo "🚀 Starting mini VPS setup..."
+      sudo apt update -y
+      sudo apt install -y nginx net-tools curl wget nano unzip
       sudo service nginx start
+      echo "✅ Nginx started on port 80"
+      echo "🌐 Preview link appears on bottom-right (port 80)"
 ports:
   - port: 80
     onOpen: open-preview
