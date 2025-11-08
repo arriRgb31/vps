@@ -1,0 +1,9 @@
+tasks:
+  - name: Setup VPS
+    command: |
+      sudo apt update
+      sudo apt install -y nginx
+      sudo service nginx start
+ports:
+  - port: 80
+    onOpen: open-preview
